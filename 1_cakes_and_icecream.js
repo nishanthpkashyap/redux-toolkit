@@ -1,6 +1,6 @@
 const {getState, dispatch, subscribe} = require('./app/1_cake_icecream-store').store; //1st responsibility - create a store to store state
 const {cakeActions} = require('./app/features/cake/cakeSlice');
-const {icecreamActions} = require('./app/features/ice-cream/icecreamSlice');
+const {icecreamActions} = require('./app/features/ice-cream/1_icecreamSlice');
 
 //2st responsibility - getState()
 console.log("Initial state:\n", getState());
