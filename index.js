@@ -1,5 +1,6 @@
 const {getState, dispatch, subscribe} = require('./app/store').store; //1st responsibility - create a store to store state
-const {cakeActions, cakeReducer} = require('./app/features/cake/cakeSlice')
+const {cakeActions} = require('./app/features/cake/cakeSlice');
+const {icecreamActions} = require('./app/features/ice-cream/icecreamSlice');
 
 //2st responsibility - getState()
 console.log("Initial state:\n", getState());
@@ -11,8 +12,12 @@ const unsubscribe = subscribe(()=>{console.log("Updated State:", getState())});
 dispatch(cakeActions.order(2))
 dispatch(cakeActions.order(2))
 dispatch(cakeActions.order(2))
-dispatch(cakeActions.restock(6))
+dispatch(cakeActions.restock(10 - getState().cake.no_of_cakes))
+dispatch(icecreamActions.order(4))
+dispatch(icecreamActions.order(4))
+dispatch(icecreamActions.order(4))
+dispatch(icecreamActions.restock(20 - getState().icecream.no_of_icecreams))
 
-//5th responsibility - unsubscibe() all listeners
+//5th responsibility - unsubscibe() all listener
 unsubscribe();
 
