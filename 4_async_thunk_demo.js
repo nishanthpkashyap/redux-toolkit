@@ -1,5 +1,5 @@
 const {dispatch, getState, subscribe} = require('./app/4_async_thunk_store').store;
-const {fetchUsersList} = require('./app/features/users/usersSlice');
+const {fetchUsersList} = require('./features/users/usersSlice');
 
 console.log("Initial state:", getState());
 
